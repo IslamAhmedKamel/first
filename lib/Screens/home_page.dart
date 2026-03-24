@@ -1,5 +1,4 @@
-import 'package:first_project/Components/myCustomButton.dart'
-    show MyCustomButton;
+import 'package:first_project/Components/my_custom_button.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -20,16 +19,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Counter Points", style: TextStyle(color: Colors.white)),
       ),
       body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Spacer(flex: 1),
-
-          Container(
+          SizedBox(
             height: 400,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
@@ -37,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "$countA",
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 70,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -54,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             });
                           },
                         ),
+                        SizedBox(height: 12),
 
                         MyCustomButton(
                           string: 'Add 2 Point ',
@@ -63,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             });
                           },
                         ),
-
+                        SizedBox(height: 12),
                         MyCustomButton(
                           string: 'Add 3 Point ',
                           onPressed: () {
@@ -77,10 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
 
-                VerticalDivider(thickness: 2, color: Colors.orange),
+                SizedBox(
+                  height: 400,
+                  child: VerticalDivider(
+                    thickness: 2,
+                    color: Colors.grey,
+                    indent: 20,
+                  ),
+                ),
 
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
@@ -88,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "$countB",
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 70,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -105,16 +111,19 @@ class _MyHomePageState extends State<MyHomePage> {
                             });
                           },
                         ),
+                        SizedBox(height: 12),
+
                         MyCustomButton(
-                          string: 'Add 2 Points ',
+                          string: 'Add 2 Point ',
                           onPressed: () {
                             setState(() {
                               countB += 2;
                             });
                           },
                         ),
+                        SizedBox(height: 12),
                         MyCustomButton(
-                          string: 'Add 3 Points ',
+                          string: 'Add 3 Point ',
                           onPressed: () {
                             setState(() {
                               countB += 3;
@@ -128,10 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Spacer(flex: 1),
 
+          SizedBox(height: 50),
           MyCustomButton(
-            string: "Rest Counter9",
+            string: "Rest Counter",
             onPressed: () {
               setState(() {
                 countA = 0;
@@ -139,8 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
-
-          Spacer(flex: 3),
+          SizedBox(height: 50),
         ],
       ),
     );
