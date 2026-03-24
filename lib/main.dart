@@ -1,3 +1,4 @@
+import 'package:first_project/Screens/HomePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,20 +12,5 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: MyHomePage(), debugShowCheckedModeBanner: false);
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Text("Counter Points", style: TextStyle(color: Colors.white)),
-      ),
-      body: Column(children: [Text("Flutter")]),
-    );
   }
 }
